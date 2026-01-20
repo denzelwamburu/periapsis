@@ -1,0 +1,137 @@
+/* Mission Control Theme Variables */
+:root {
+  /* Space Colors */
+  --space-black: #0a0a0f;
+  --space-dark: #12121a;
+  --space-gray: #1a1a24;
+  
+  /* Accent Colors */
+  --nebula-purple: #7c3aed;
+  --nebula-purple-dim: #5b21b6;
+  --electric-teal: #22d3ee;
+  --electric-teal-dim: #0891b2;
+  
+  /* Status Colors */
+  --status-success: #10b981;
+  --status-warning: #f59e0b;
+  --status-danger: #ef4444;
+  --status-info: #3b82f6;
+  
+  /* Orbit Colors */
+  --orbit-leo: #22d3ee;
+  --orbit-meo: #a855f7;
+  --orbit-geo: #f59e0b;
+  --orbit-heo: #ef4444;
+  
+  /* Glass Effect */
+  --glass-bg: rgba(18, 18, 26, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+/* Glow Effects */
+.glow-teal {
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+}
+
+/* Data Display Fonts */
+.font-data {
+  font-family: var(--font-geist-mono), 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Orbit Type Badge Colors */
+.orbit-leo {
+  background: rgba(34, 211, 238, 0.2);
+  color: var(--orbit-leo);
+  border: 1px solid rgba(34, 211, 238, 0.3);
+}
+
+.orbit-meo {
+  background: rgba(168, 85, 247, 0.2);
+  color: var(--orbit-meo);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.orbit-geo {
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--orbit-geo);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+/* Status Indicators */
+.status-active {
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--status-success);
+}
+
+.status-warning {
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--status-warning);
+}
+
+/* Scrollbar Styling */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Animation Keyframes */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes satellite-blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-satellite-blink {
+  animation: satellite-blink 1s ease-in-out infinite;
+}
