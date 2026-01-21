@@ -1,17 +1,28 @@
-# Nixpacks configuration for monorepo
-# This file is at the root because Railway reads it before applying rootDirectory
+# ============================================
+# Nixpacks Configuration for Orbital Command Center
+# Monorepo deployment (apps/web) to Railway
+# ============================================
 
 [phases.setup]
-nixPkgs = ["nodejs_22", "nodePackages.pnpm"]
+# Use standard nodejs package - Corepack handles pnpm via packageManager field
+nixPkgs = ["nodejs"]
 
 [phases.install]
-cmds = ["cd apps/web && pnpm install"]
+# Enable Corepack for pnpm version management, then install in apps/web
+cmds = [
+  "corepack enable",
+  "cd apps/web && pnpm install --frozen-lockfile"
+]
 
 [phases.build]
+# Build the Next.js application
 cmds = ["cd apps/web && pnpm build"]
 
 [start]
+# Start the production server
 cmd = "cd apps/web && pnpm start"
 
 [variables]
 NODE_ENV = "production"
+CI = "true"
+NEXT_TELEMETRY_DISABLED = "1"
