@@ -4,8 +4,8 @@
 # ============================================
 
 [phases.setup]
-# Use Node.js 20 for Next.js 16 compatibility
-nixPkgs = ["nodejs_20"]
+# Use Node.js 22 for Next.js 16 compatibility (requires >=20.9.0)
+nixPkgs = ["nodejs_22"]
 
 [phases.install]
 # Enable Corepack for pnpm version management, then install in apps/web
